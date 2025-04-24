@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: puzzle
+  config:
+    import: optional:file:./.env.properties
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
+    username: ${RABBITMQ_USERNAME}
+    password: ${RABBITMQ_PASSWORD}
+    listener:
+      simple:
+        auto-startup: true
+logging:
+  level:
+    org.springframework.security: TRACE
+jwt:
+  secret: ${JWT_SECRET}
+  access-token-duration: 3600000 # 1 hour
+  refresh-token-duration: 604800000 # 1 week
+admin:
+  username: ${ADMIN_USERNAME}
+  password: ${ADMIN_PASSWORD}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  security:
+      enabled: false
+  endpoint:
+    health:
+      show-details: always
