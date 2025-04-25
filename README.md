@@ -60,7 +60,7 @@ Remove the `.example` extensions of `.env.properties.example` and `env.example` 
 docker-compose up --build
 ```
 
-API available at: http://localhost:8080
+API available at: http://localhost:8080/api/v1
 
 ### Gameplay 
 #### Player
